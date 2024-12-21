@@ -8,7 +8,7 @@ BloggingApp is a Django-based web application that allows users to create, manag
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)**
+- [Contributing](#contributing)
 
 ## Introduction
 
