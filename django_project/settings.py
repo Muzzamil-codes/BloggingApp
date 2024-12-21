@@ -1,7 +1,3 @@
-# from dotenv import load_dotenv
-
-# load_dotenv()
-
 from pathlib import Path
 import os
 from django.contrib.messages import constants as messages
@@ -31,7 +27,7 @@ EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 X_FRAME_OPTIONS = '*'
