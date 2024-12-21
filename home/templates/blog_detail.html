@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block start %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{blog_obj.title}}</title>
+
+    <link rel="stylesheet" href="/media/css/Home.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  
+    <section class="post-header">
+        <div class="header-content post-container">
+
+            <a href="/" class="back-home">Back To Home</a>
+
+            <h1 class="header-title">{{blog_obj.title}}</h1>
+            
+
+            <img src="/media/{{blog_obj.image}}" alt="" class="header-image">
+        </div>
+    </section>
+
+    <br>
+  
+    <section class="post-content post-container">
+        <p class="post-text">{{blog_obj.content|safe}}</p>
+    </section>
+
+    <section class="post container">
+        <!-- Post Box - 1  -->
+        {% for blog in blogs %}
+        <div class="post-box design">
+            <img src="/media/{{blog.image}}" alt="" class="post-image">
+            <a href="{% url 'blog_detail' blog.slug %}" class="post-title">
+                {{blog.title}}
+            </a>
+            <span class="post-date">{{blog.upload_to}}</span>
+            
+            <div class="profile">
+                <span class="profile-name">{{blog.user.username}}</span>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+  
+    <div class="share post-container">
+        <span class="share-title">Share This Article</span>
+        <div class="social">
+            <a href=""><i class="bx bxl-facebook"></i></a>
+            <a href=""><i class="bx bxl-twitter"></i></a>
+            <a href=""><i class="bx bxl-instagram"></i></a>
+            <a href=""><i class="bx bxl-linkedin"></i></a> 
+        </div>
+    </div>
+
+    <!-- Footer -->
+</body>
+</html>
+{% endblock %}

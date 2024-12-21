@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Blog Post</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .email-header {
+            background-color: #000000;
+            padding: 20px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .email-header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .email-body {
+            padding: 20px;
+        }
+
+        .blog-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0 0 10px;
+            color: #000000;
+        }
+
+        .blog-image {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .blog-content {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555555;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #00ff8c;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            background-color: #00e682;
+        }
+
+        .email-footer {
+            text-align: center;
+            padding: 15px 0;
+            background-color: #f1f1f1;
+            font-size: 14px;
+            color: #666666;
+        }
+
+        .social-icons {
+            margin: 10px 0;
+        }
+
+        .social-icons a {
+            margin: 0 5px;
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #00ff8c;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="email-header">
+            <h1>New Blog Post Alert!</h1>
+        </div>
+
+        <div class="email-body">
+            <h2 class="blog-title">{{ title }}</h2>
+            <p class="blog-content">
+                {{ content|safe }}
+            </p>
+        </div>
+
+
+        <div class="email-footer">
+            <p>Thank you for being a part of our community!</p>
+            <div class="social-icons">
+                <a href="#"><i class="bx bxl-facebook"></i></a>
+                <a href="#"><i class="bx bxl-twitter"></i></a>
+                <a href="#"><i class="bx bxl-instagram"></i></a>
+                <a href="#"><i class="bx bxl-linkedin"></i></a>
+            </div>
+            <p>&copy; VPblogs. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

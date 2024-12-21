@@ -1,0 +1,49 @@
+:root {
+    --clr-neon: hsl(317 100% 54%);
+    --clr-bg: hsl(323 21% 16%);
+    }
+
+.containerbtn {
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+}
+
+.close {
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    right: 10px;
+    bottom: 90px;
+}
+
+.btn {
+    position: fixed;
+    bottom: 8px;
+    right: 15px;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    background: var(--clr-neon);
+    width: 225px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+}
+    
+.btn:hover, .btn:focus, .btn:active{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}

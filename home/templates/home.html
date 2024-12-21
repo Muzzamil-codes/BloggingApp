@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block start %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VPblogs | Home</title>
+        
+        <link rel="stylesheet" href="/media/css/tome.css?v=3">
+        <link rel="stylesheet" href="/media/css/subscribebn.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>       
+        <section class="home" id="home">
+            <div class="home-text container">
+                <h2 class="home-title">VP<span>Blogs</span></h2>
+                <span class="home-subtitle">Enriched with content that's just for you.</span>
+            </div>    
+        </section>
+        
+        <div class="post-filter container">
+            <span class="filter-item active-filter" data-filter="all">All</span>
+            <span class="filter-item" data-filter="Tech">Tech</span>
+            <span class="filter-item" data-filter="News">News</span>
+            <span class="filter-item" data-filter="Gaming">Gaming</span>
+            <span class="filter-item" data-filter="Literature">Literature</span>
+            <span class="filter-item" data-filter="History">History</span>
+        </div>
+        
+        <section class="post container">
+            <!-- Post Box - 1  -->
+            {% for blog in blogs %}
+            <div class="post-box {{blog.genre}}">
+                <img src="/media/{{blog.image}}" alt="" class="post-image">
+                <h2 class="category">{{blog.genre}}</h2>
+                <a href="{% url 'blog_detail' blog.slug %}?refresh=true" class="post-title">
+                    {{blog.title}}
+                </a>
+                <span class="post-date">{{blog.upload_to}}</span>           
+                <div class="profile">
+                    <span class="profile-name">{{blog.user.username}}</span>
+                </div>
+                <div class="eye-logo-wrapper">
+                    <li class="eye-logo"><i class="fa-regular fa-eye"></i> {{ blog.views }}</li>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+        <!-- Footer -->
+        <div class="containerbtn">
+            <a href='/subscribe' class="btn">Subscribe to our newsletter!</a>
+            <button class="close">X</button>
+        </div>
+        
+        <script>
+
+            const close = document.querySelector(".close");
+            const btn = document.querySelector(".btn");
+    
+            close.addEventListener("click", function() {
+                btn.style.display = 'none';
+                close.style.display = 'none'; 
+            })
+
+        </script>
+
+    </body>
+</html>
+
+{% endblock %}
